@@ -63,7 +63,7 @@ public class PeopleController {
 
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") int id, Model model) {
-        model.addAttribute(peopleService.findOne(id));
+        model.addAttribute(peopleService.findOne(id).get());
         return "people/edit";
     }
 
